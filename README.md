@@ -7,8 +7,10 @@ Back-end developer task (dummy core banking system and rest integrator service),
 
 SOAP Web Service created with Spring Boot Starter Web Services. when creating the SOAP services use the contract first approach and define the XSD for the request and response.</BR>
 /src/main/resources/core-bank-details.xsd
-
+#### Sample get account balance request and response.  
 ![](testResults/xsd.PNG)
+
+To do the mapping from XML to Java and Java to XML, JAXB (Java API for XML binding) used and to generate the the Java objects based on the XSD Maven JAXB Plugin defined in the pom.xml
 
 
 
