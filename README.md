@@ -113,7 +113,7 @@ make the transaction according to fund trasfer type and return the transaction d
 ![](images/3.PNG)
 
 ###### Sample Falied Request
-![](images/3.PNG)
+![](images/4.PNG)
 
 
 
