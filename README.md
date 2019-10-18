@@ -58,7 +58,7 @@ resources/wsdl/corebank.wsdl
 
 ##### URL of the swagger Ui - http://localhost:8083/integrator-service/swagger-ui.html
 
-##### Exposed rest end points.</Br>
+## Exposed rest end points.</Br>
 ![](testResults/restendpoints.PNG)
 </BR>
 
