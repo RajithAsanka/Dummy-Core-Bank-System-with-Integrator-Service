@@ -58,7 +58,7 @@ resources/wsdl/corebank.wsdl
 
 ##### URL of the swagger Ui - http://localhost:8083/integrator-service/swagger-ui.html
 </BR>
-##### Exposed rest end points.
+##### Exposed rest end points.</Br>
 ![](testResults/restendpoints.PNG)
 </BR>
 
@@ -66,12 +66,13 @@ resources/wsdl/corebank.wsdl
 server.port=8083 </BR>
 server.servlet.context-path=/integrator-service </BR>
 
-# Test Core Bank Dummy System 
-## Build Commands for Appolication
-#### mvn clean install - to build the Dummy core bank system and Integrator service use maven build commands.
+## Test Core Bank Dummy System 
+#### Build Commands for Appolication
+##### mvn clean install - to build the Dummy core bank system and Integrator service use maven build commands.
 ## Run Commands
-####  java -jar dcbs-0.0.1-SNAPSHOT.jar - to run dummy core bank SOAP web services
-####  java -jar integrator-service-0.0.1-SNAPSHOT.jar - to run dummy Integrator Service
+
+#####  java -jar dcbs-0.0.1-SNAPSHOT.jar - to run dummy core bank SOAP web services
+##### java -jar integrator-service-0.0.1-SNAPSHOT.jar - to run dummy Integrator Service
 
 
 
