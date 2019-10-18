@@ -74,7 +74,7 @@ server.servlet.context-path=/integrator-service </BR>
 #####  java -jar dcbs-0.0.1-SNAPSHOT.jar - to run dummy core bank SOAP web services
 ##### java -jar integrator-service-0.0.1-SNAPSHOT.jar - to run dummy Integrator Service
 
-##### Exposed rest end points.</Br>
+## Exposed rest end points.</Br>
 ![](testResults/restendpoints.PNG)
 
 ###### Get account balance of particular account - @GetMapping
@@ -94,7 +94,7 @@ return the total account balance of particular user if exists in the dummy core 
 ###### userId 
 ###### fromAccountNO - source account number
 ###### toAccountNO - beneficiary account number
-###### amount
+###### amount - transfer amount
 
 make the transaction according to fund trasfer type and return the transaction details.
 
