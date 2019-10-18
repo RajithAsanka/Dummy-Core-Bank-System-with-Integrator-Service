@@ -85,7 +85,7 @@ server.servlet.context-path=/integrator-service </BR>
 return the account balance of particular account if exists in the dummy core bank database other wise return service messages with error.
 
 
-###### Success Request
+###### Sample Success Request
 ![](images/1.PNG)
 
 ###### Get total account balance - @GetMapping
@@ -93,7 +93,7 @@ return the account balance of particular account if exists in the dummy core ban
 ###### Expected parameter name - userId
 return the total account balance of particular user if exists in the dummy core bank database other wise return error messages.
 
-###### Success Request
+###### Sample Success Request
 ![](images/2.PNG)
 
 ###### Make Fund Transfer to Own Accounts / Make Fund Transfer to other Accounts - @PostMapping
@@ -109,7 +109,10 @@ make the transaction according to fund trasfer type and return the transaction d
 ###### OWN - Make Fund Transfer to Own Accounts
 ###### THIRDPARTY - Make Fund Transfer to other Accounts
 
-###### Success Request
+###### Sample Success Request
+![](images/3.PNG)
+
+###### Sample Falied Request
 ![](images/3.PNG)
 
 
