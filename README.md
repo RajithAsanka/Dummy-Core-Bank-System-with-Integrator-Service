@@ -33,9 +33,8 @@ Wizdler browser plugin and SOAP-UI used to test the SOAP end points during the d
  H2 In-memory database used for the manage data in memory,  with spring boot + SOAP web services.
  
 ##### URL of the H2 databse console - http://localhost:8082/dummy-core-bank/h2/login.jsp (username/password - root)
- 
-##### Few Optional Configurations
-#SERVER CONFIGURATIONS</BR> 
+
+###### SERVER CONFIGURATIONS</BR> 
 server.port=8082 </BR>
 server.servlet.context-path=/dummy-core-bank </BR>
  
@@ -63,9 +62,8 @@ resources/wsdl/corebank.wsdl
 ##### Exposed rest end points.
 ![](testResults/restendpoints.PNG)
 </BR>
- 
-##### Few Optional Configurations
-#SERVER CONFIGURATIONS</BR> 
+
+###### SERVER CONFIGURATIONS </BR> 
 server.port=8083 </BR>
 server.servlet.context-path=/integrator-service </BR>
 
