@@ -19,7 +19,7 @@ SOAP Web Service created with the Spring Boot Starter Web Services. When creatin
 /src/main/resources/core-bank-details.xsd
 
 ##### Sample get account balance request and response.  
-![](testResults/xsd.PNG)
+![](images/xsd.PNG)
 
 To do the mapping from XML to Java and Java to XML, JAXB (Java API for XML binding) used.</Br>
 To generate the the Java objects based on the XSD Maven JAXB Plugin defined in the pom.xml. Also wsdl4j dependency added to the pom.xml to generate the WSDl with spring web services.
@@ -27,7 +27,7 @@ To generate the the Java objects based on the XSD Maven JAXB Plugin defined in t
 ##### URL of the WSDL - http://localhost:8082/dummy-core-bank/ws/corebank.wsdl
 
 Wizdler browser plugin and SOAP-UI used to test the SOAP end points during the development time.</BR></BR>
-![](testResults/wsdl.PNG)
+![](images/wsdl.PNG)
 </BR>
 
  H2 In-memory database used for the manage data in memory,  with spring boot + SOAP web services.
@@ -59,7 +59,7 @@ resources/wsdl/corebank.wsdl
 ##### URL of the swagger Ui - http://localhost:8083/integrator-service/swagger-ui.html
 
 ## Exposed rest end points.</Br>
-![](testResults/restendpoints.PNG)
+![](images/restendpoints.PNG)
 </BR>
 
 ###### SERVER CONFIGURATIONS </BR> 
@@ -75,7 +75,7 @@ server.servlet.context-path=/integrator-service </BR>
 ##### java -jar integrator-service-0.0.1-SNAPSHOT.jar - to run dummy Integrator Service
 
 ## Exposed rest end points.</Br>
-![](testResults/restendpoints.PNG)
+![](images/restendpoints.PNG)
 
 ###### Get account balance of particular account - @GetMapping
 ###### URL  - http://localhost:8083/integrator-service/rest/api/v1/get/account/balance/by/accountNo
