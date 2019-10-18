@@ -1,5 +1,20 @@
 # Dummy-Core-Bank-System-with-Integrator-Service
-Back-end developer task (dummy core banking system and rest integrator service), as a SOAP web services and Integrator service as a REST Api
+Back-end developer task (dummy core banking system and rest integrator service), as a SOAP web services and Integrator service as a REST Api.
+
+## Development Methpodology
+
+### Core Bank Dummy
+
+SOAP Web Service created with Spring Boot Starter Web Services. when creating the SOAP services use a contract first approach and define the XSD for the request and response.
+/src/main/resources/core-bank-details.xsd
+
+
+## Built With
+
+* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+* [Maven](https://maven.apache.org/) - Dependency Management
+* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+
 
 ## Getting Started
 
@@ -55,11 +70,7 @@ Give an example
 
 Add additional notes about how to deploy this on a live system
 
-## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## Contributing
 
