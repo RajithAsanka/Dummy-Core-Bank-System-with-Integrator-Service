@@ -10,7 +10,7 @@ Back-end developer task (dummy core banking system and rest integrator service),
 JDK 1.8, Intellij , Maven – Development environment</Br>
 Spring-boot – Underlying application framework </Br>
 maven-jaxb2-plugin plugin – for JAXB stub generation and Mapping </Br>
-H2 In-memory database + JPA  - for memory management </Br>
+(H2 In-memory database + Java Persistence API) - for memory management </Br>
 SOAP UI and Wizdler browser plugin - to test SOAP end points</Br></Br>
 
 ##### Important Development Steps
@@ -45,7 +45,7 @@ server.servlet.context-path=/dummy-core-bank </BR>
 JDK 1.8, Intellij , Maven – Development environment</Br>
 Spring-boot – Underlying application framework </Br>
 maven-jaxb2-plugin plugin – for JAXB stub generation and Mapping </Br>
-mysql + JPA  - to save audit events</Br>
+(mysql + Java Persistence API)  - to save audit events</Br>
 swagger-ui - to test rest end points
 </Br></Br>
 
