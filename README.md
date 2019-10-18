@@ -69,7 +69,7 @@ server.servlet.context-path=/integrator-service </BR>
 ## Test Core Bank Dummy System 
 #### Build Commands for Application
 ##### dcbs- dummy core bank system source folder
-##### dcbs- integrator service source folder
+##### integrator-service - integrator service source folder
 ##### mvn clean install - to build the Dummy core bank system and Integrator service use maven build commands.
 ## Run Commands
 
