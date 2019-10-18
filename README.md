@@ -87,10 +87,16 @@ return the account balance of particular account if exists in the dummy core ban
 ###### Expected paramer name - userId
 return the total account balance of particular user if exists in the dummy core bank database other wise return error messages.
 
-###### Get total account balance - @GetMapping
-###### URL  - http://localhost:8083/integrator-service/rest/api/v1/get/total/account/balance/by/userId
-###### Expected paramer name - userId
-return the total account balance of particular user if exists in the dummy core bank database other wise return error messages.
+###### Make Fund Transfer to Own Accounts / Make Fund Transfer to other Accounts - @PostMapping
+###### URL  - http://localhost:8083/integrator-service/rest/api/v1/make/fundtransfer
+###### Expected parameters,
+###### fundTransferType - (OWN ,THIRDPARTY)
+###### userId 
+###### fromAccountNO - source account number
+###### toAccountNO - beneficiary account number
+###### amount
+
+make the transaction according to fund trasfer type and return the transaction details.
 
 
 
