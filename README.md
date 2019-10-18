@@ -67,7 +67,7 @@ server.port=8083 </BR>
 server.servlet.context-path=/integrator-service </BR>
 
 ## Test Core Bank Dummy System 
-#### Build Commands for Appolication
+#### Build Commands for Application
 ##### mvn clean install - to build the Dummy core bank system and Integrator service use maven build commands.
 ## Run Commands
 
