@@ -38,7 +38,7 @@ public class IntegratorService {
     public GetAccountBalanceByAccountRestResponse getAccountBalanceByAccountNo(String accountNo) {
 
         //save audit events
-        saveAuditeventForGetRequests(RequestType.GET.name(), "getAccountBalanceByAccountNo", accountNo);
+        saveAuditeventForAccountBalanceGetRequests(RequestType.GET.name(), "getAccountBalanceByAccountNo", accountNo);
 
         GetAccountBalanceByAccountRestResponse balanceByAccountRestResponse = new GetAccountBalanceByAccountRestResponse();
 
@@ -71,7 +71,7 @@ public class IntegratorService {
      */
     public GetTotalAccountBalanceByUserIdRestResponse getTotalBalanceByUserId(String userId) {
 
-        saveAuditeventForGetRequests(RequestType.GET.name(), "getTotalBalanceByUserId", userId);
+        saveAuditeventForTotalBalanceGetRequests(RequestType.GET.name(), "getTotalBalanceByUserId", userId);
 
         GetTotalAccountBalanceByUserIdRestResponse totalAccountBalanceByUserId = new GetTotalAccountBalanceByUserIdRestResponse();
 
@@ -141,13 +141,24 @@ public class IntegratorService {
      * @param requestedService
      * @param requestParameter
      */
-    private void saveAuditeventForGetRequests(String requestType, String requestedService, String requestParameter) {
+    private void saveAuditeventForAccountBalanceGetRequests(String requestType, String requestedService, String requestParameter) {
         IntegratorServiceAudit serviceAudit = new IntegratorServiceAudit();
         serviceAudit.setRequestType(requestType);
         serviceAudit.setRequestMethod(requestedService);
-        serviceAudit.setFundTransferType(requestParameter);
+        serviceAudit.setBalanceInquiredAccountNo(requestParameter);
         serviceAudit.setRequestedDate(Instant.now());
         auditRepository.save(serviceAudit);
+
+    }
+
+    private void saveAuditeventForTotalBalanceGetRequests(String requestType, String requestedService, String requestParameter) {
+        IntegratorServiceAudit serviceAudit = new IntegratorServiceAudit();
+        serviceAudit.setRequestType(requestType);
+        serviceAudit.setRequestMethod(requestedService);
+        serviceAudit.setUserId(requestParameter);
+        serviceAudit.setRequestedDate(Instant.now());
+        auditRepository.save(serviceAudit);
+
     }
 
     /**
