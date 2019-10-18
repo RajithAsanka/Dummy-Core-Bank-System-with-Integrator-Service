@@ -15,14 +15,14 @@ SOAP UI and Wizdler browser plugin - to test SOAP end points</Br></Br>
 
 ##### Important Development Steps
 
-SOAP Web Service created with the Spring Boot Starter Web Services. when creating the SOAP services use the contract first approach and define the XSD for the request and response.</BR>
+SOAP Web Service created with the Spring Boot Starter Web Services. When creating the SOAP services use the contract first approach and define the XSD for the request and response.</BR>
 /src/main/resources/core-bank-details.xsd
 
 ##### Sample get account balance request and response.  
 ![](testResults/xsd.PNG)
 
 To do the mapping from XML to Java and Java to XML, JAXB (Java API for XML binding) used.</Br>
-To generate the the Java objects based on the XSD Maven JAXB Plugin defined in the pom.xml. also wsdl4j dependency added to the pom.xml to generate the WSDl with spring web services.
+To generate the the Java objects based on the XSD Maven JAXB Plugin defined in the pom.xml. Also wsdl4j dependency added to the pom.xml to generate the WSDl with spring web services.
 
 ##### URL of the WSDL - http://localhost:8082/dummy-core-bank/ws/corebank.wsdl
 
