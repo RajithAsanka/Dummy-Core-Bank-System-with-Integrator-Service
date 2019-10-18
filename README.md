@@ -97,6 +97,8 @@ return the total account balance of particular user if exists in the dummy core 
 ###### amount - transfer amount
 
 make the transaction according to fund trasfer type and return the transaction details.
+###### OWN - Make Fund Transfer to Own Accounts
+###### THIRDPARTY - Make Fund Transfer to other Accounts 
 
 
 
