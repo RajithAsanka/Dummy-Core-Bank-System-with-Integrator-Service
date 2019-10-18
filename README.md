@@ -10,8 +10,8 @@ Back-end developer task (dummy core banking system and rest integrator service),
 JDK 1.8, Intellij , Maven – Development environment</Br>
 Spring-boot – Underlying application framework </Br>
 maven-jaxb2-plugin plugin – for JAXB stub generation and Mapping </Br>
-H2 In-memory database - for memmory management </Br>
-SOAP UI and Wizdler browser plugin </Br></Br>
+H2 In-memory database + JPA  - for memory management </Br>
+SOAP UI and Wizdler browser plugin - to test SOAP end points</Br></Br>
 
 ##### Development Steps
 
@@ -31,18 +31,23 @@ Wizdler browser plugin and SOAP-UI used to test the SOAP end points during the d
 
  H2 In-memory database used for the manage data in memory with spring boot + SOAP web services.
  
-##### URL of the H2 databse console - http://localhost:8082/dummy-core-bank/h2/login.jsp
- (username/ password)root</Br>
+##### URL of the H2 databse console - http://localhost:8082/dummy-core-bank/h2/login.jsp (username/password - root)
  
- ### Core Bank Dummy
+##### Few Optional Configurations
+#SERVER CONFIGURATIONS</BR> 
+server.port=8082 </BR>
+server.servlet.context-path=/dummy-core-bank </BR>
+ 
+ ### Integrator Service (Spring boot soap client with rest APIs)
 
 #### Tools and Technology Stack for core bank dummy.
 
 JDK 1.8, Intellij , Maven – Development environment</Br>
 Spring-boot – Underlying application framework </Br>
 maven-jaxb2-plugin plugin – for JAXB stub generation and Mapping </Br>
-H2 In-memory database - for memmory management </Br>
-SOAP UI and Wizdler browser plugin </Br></Br>
+mysql + JPA  - to save audit events</Br>
+swagger-ui - to test rest end points
+</Br></Br>
 
 ##### Development Steps
 
@@ -64,6 +69,12 @@ Wizdler browser plugin and SOAP-UI used to test the SOAP end points during the d
  
 ##### URL of the H2 databse console - http://localhost:8082/dummy-core-bank/h2/login.jsp
  (username/ password)root</Br>
+ 
+##### Few Optional Configurations
+#SERVER CONFIGURATIONS</BR> 
+server.port=8082 </BR>
+server.servlet.context-path=/dummy-core-bank </BR>
+ 
 
 
 
