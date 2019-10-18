@@ -1,12 +1,16 @@
 # Dummy-Core-Bank-System-with-Integrator-Service
 Back-end developer task (dummy core banking system and rest integrator service), as a SOAP web services and Integrator service as a REST Api.
 
-## Development Methpodology
+## Development Methodology
 
 ### Core Bank Dummy
 
 SOAP Web Service created with Spring Boot Starter Web Services. when creating the SOAP services use the contract first approach and define the XSD for the request and response.</BR>
 /src/main/resources/core-bank-details.xsd
+
+![](testResults/xsd.PNG)
+
+
 
 
 ## Built With
