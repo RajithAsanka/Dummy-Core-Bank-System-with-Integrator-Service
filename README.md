@@ -57,7 +57,7 @@ use the maven-jaxb2-plugin and generated the JAXB annotated stub classes.
 resources/wsdl/corebank.wsdl
 
 ##### URL of the swagger Ui - http://localhost:8083/integrator-service/swagger-ui.html
-</BR>
+
 ##### Exposed rest end points.</Br>
 ![](testResults/restendpoints.PNG)
 </BR>
