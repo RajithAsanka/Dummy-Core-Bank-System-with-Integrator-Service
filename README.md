@@ -74,7 +74,23 @@ server.servlet.context-path=/integrator-service </BR>
 #####  java -jar dcbs-0.0.1-SNAPSHOT.jar - to run dummy core bank SOAP web services
 ##### java -jar integrator-service-0.0.1-SNAPSHOT.jar - to run dummy Integrator Service
 
+##### Exposed rest end points.</Br>
+![](testResults/restendpoints.PNG)
 
+###### Get account balance of particular account - @GetMapping
+###### URL  - http://localhost:8083/integrator-service/rest/api/v1/get/account/balance/by/accountNo
+Expected paramer name - accountNo
+return the account balance of particular account if exists in the dummy core bank database other wise return service messages with error.
+
+###### Get total account balance - @GetMapping
+###### URL  - http://localhost:8083/integrator-service/rest/api/v1/get/total/account/balance/by/userId
+###### Expected paramer name - userId
+return the total account balance of particular user if exists in the dummy core bank database other wise return error messages.
+
+###### Get total account balance - @GetMapping
+###### URL  - http://localhost:8083/integrator-service/rest/api/v1/get/total/account/balance/by/userId
+###### Expected paramer name - userId
+return the total account balance of particular user if exists in the dummy core bank database other wise return error messages.
 
 
 
