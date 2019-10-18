@@ -22,7 +22,7 @@ SOAP Web Service created with the Spring Boot Starter Web Services. When creatin
 ![](images/xsd.PNG)
 
 To do the mapping from XML to Java and Java to XML, JAXB (Java API for XML binding) used.</Br>
-To generate the the Java objects based on the XSD Maven JAXB Plugin defined in the pom.xml. Also wsdl4j dependency added to the pom.xml to generate the WSDl with spring web services.
+To generate the Java objects based on the XSD Maven JAXB Plugin defined in the pom.xml. Also wsdl4j dependency added to the pom.xml to generate the WSDl with spring web services.
 
 ##### URL of the WSDL - http://localhost:8082/dummy-core-bank/ws/corebank.wsdl
 
@@ -68,6 +68,8 @@ server.servlet.context-path=/integrator-service </BR>
 
 ## Test Core Bank Dummy System 
 #### Build Commands for Application
+##### dcbs- dummy core bank system source folder
+##### integrator-service - integrator service source folder
 ##### mvn clean install - to build the Dummy core bank system and Integrator service use maven build commands.
 ## Run Commands
 
@@ -79,12 +81,12 @@ server.servlet.context-path=/integrator-service </BR>
 
 ###### Get account balance of particular account - @GetMapping
 ###### URL  - http://localhost:8083/integrator-service/rest/api/v1/get/account/balance/by/accountNo
-###### Expected paramer name - accountNo
+###### Expected parameter name - accountNo
 return the account balance of particular account if exists in the dummy core bank database other wise return service messages with error.
 
 ###### Get total account balance - @GetMapping
 ###### URL  - http://localhost:8083/integrator-service/rest/api/v1/get/total/account/balance/by/userId
-###### Expected paramer name - userId
+###### Expected parameter name - userId
 return the total account balance of particular user if exists in the dummy core bank database other wise return error messages.
 
 ###### Make Fund Transfer to Own Accounts / Make Fund Transfer to other Accounts - @PostMapping
@@ -97,6 +99,8 @@ return the total account balance of particular user if exists in the dummy core 
 ###### amount - transfer amount
 
 make the transaction according to fund trasfer type and return the transaction details.
+###### OWN - Make Fund Transfer to Own Accounts
+###### THIRDPARTY - Make Fund Transfer to other Accounts 
 
 
 
