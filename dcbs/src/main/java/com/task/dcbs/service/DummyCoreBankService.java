@@ -134,19 +134,37 @@ public class DummyCoreBankService {
      */
     private void doThirdPartFundTransfer(FundTransferRequest transferRequest, FundTransferResponse transferResponse) {
 
+        List<AccountEntity> accountList = accountDetailsRepository.findByUserId(transferRequest.getUserId());
+        if (null != accountList && !(accountList.isEmpty())) {
 
-        AccountEntity fromAccount = accountDetailsRepository.findByAccountNo(transferRequest.getFromAccountNO());
-        AccountEntity toAccount = accountDetailsRepository.findByAccountNo(transferRequest.getToAccountNO());
+            AccountEntity fromAccount = accountDetailsRepository.findByAccountNo(transferRequest.getFromAccountNO());
+            AccountEntity toAccount = accountDetailsRepository.findByAccountNo(transferRequest.getToAccountNO());
+            if ((null != fromAccount)) {
+                if (null != toAccount) {
+                    boolean fromAccResult = validateOwnAccount(accountList, transferRequest.getFromAccountNO());
+                    if (fromAccResult) {
+                        if (checkAccountBalance(fromAccount.getBalance(), transferRequest.getAmount())) {
+                            doFundTransfer(fromAccount, toAccount, transferRequest.getAmount(), transferResponse);
+                        } else {
+                            transferResponse.setServiceStatus(setServiceDetails(Status.FAILED, messageSource.getMessage("dcbs.insufficient.balance", null, Locale.ENGLISH)));
+                        }
+                    } else {
+                        transferResponse.setServiceStatus(setServiceDetails(Status.FAILED, messageSource.getMessage("dcbs.acc.not.own", null, Locale.ENGLISH)));
+                    }
+                } else {
+                    transferResponse.setServiceStatus(setServiceDetails(Status.FAILED, messageSource.getMessage("dcbs.acc.not.founf.thirdparty", null, Locale.ENGLISH)));
+                }
 
-        if ((null != fromAccount) && (null != toAccount)) {
-            if (checkAccountBalance(fromAccount.getBalance(), transferRequest.getAmount())) {
-                doFundTransfer(fromAccount, toAccount, transferRequest.getAmount(), transferResponse);
             } else {
-                transferResponse.setServiceStatus(setServiceDetails(Status.FAILED, messageSource.getMessage("dcbs.insufficient.balance", null, Locale.ENGLISH)));
+                transferResponse.setServiceStatus(setServiceDetails(Status.FAILED, messageSource.getMessage("dcbs.acc.not.own", null, Locale.ENGLISH)));
             }
+
+
         } else {
-            transferResponse.setServiceStatus(setServiceDetails(Status.FAILED, messageSource.getMessage("dcbs.fund.no.acc.found", null, Locale.ENGLISH)));
+            transferResponse.setServiceStatus(setServiceDetails(Status.FAILED, messageSource.getMessage("dcbs.err.no.acc.for.user", null, Locale.ENGLISH)));
         }
+
+
     }
 
     /**

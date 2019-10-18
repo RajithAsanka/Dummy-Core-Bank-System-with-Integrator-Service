@@ -47,12 +47,15 @@ public class IntegratorService {
 
         GetAccountBalanceByAccNoResponse response = (GetAccountBalanceByAccNoResponse) coreBankSOAPConnector.callWebService(CORE_BANK_NAMESPACE_URI, request);
 
-
-        balanceByAccountRestResponse.setUserId(checkValues(response.getAccountInfo().getUserId()));
-        balanceByAccountRestResponse.setAccountNo(checkValues(response.getAccountInfo().getAccountNo()));
-        balanceByAccountRestResponse.setBalance(response.getAccountInfo().getBalance());
-        balanceByAccountRestResponse.setStatus(checkValues(response.getServiceStatus().getStatus()));
-        balanceByAccountRestResponse.setMessage(checkValues(response.getServiceStatus().getMessage()));
+        if (null != response.getAccountInfo()) {
+            balanceByAccountRestResponse.setUserId(checkValues(response.getAccountInfo().getUserId()));
+            balanceByAccountRestResponse.setAccountNo(checkValues(response.getAccountInfo().getAccountNo()));
+            balanceByAccountRestResponse.setBalance(response.getAccountInfo().getBalance());
+        }
+        if (null != response.getServiceStatus()) {
+            balanceByAccountRestResponse.setStatus(checkValues(response.getServiceStatus().getStatus()));
+            balanceByAccountRestResponse.setMessage(checkValues(response.getServiceStatus().getMessage()));
+        }
 
         return balanceByAccountRestResponse;
 
@@ -77,11 +80,17 @@ public class IntegratorService {
 
         GetTotalAccountBalanceResponse response = (GetTotalAccountBalanceResponse) coreBankSOAPConnector.callWebService(CORE_BANK_NAMESPACE_URI, request);
 
-        totalAccountBalanceByUserId.setUserId(checkValues(response.getTotalUserAccountBalanceInfo().getUserId()));
-        totalAccountBalanceByUserId.setAccountDetails(response.getTotalUserAccountBalanceInfo().getAccountDetails());
-        totalAccountBalanceByUserId.setTotalBalanceForUser(response.getTotalUserAccountBalanceInfo().getTotalBalanceForUser());
-        totalAccountBalanceByUserId.setStatus(checkValues(response.getServiceStatus().getStatus()));
-        totalAccountBalanceByUserId.setMessage(checkValues(response.getServiceStatus().getMessage()));
+        if (null != response.getTotalUserAccountBalanceInfo()) {
+            totalAccountBalanceByUserId.setUserId(checkValues(response.getTotalUserAccountBalanceInfo().getUserId()));
+            totalAccountBalanceByUserId.setAccountDetails(response.getTotalUserAccountBalanceInfo().getAccountDetails());
+            totalAccountBalanceByUserId.setTotalBalanceForUser(response.getTotalUserAccountBalanceInfo().getTotalBalanceForUser());
+        }
+
+        if (null != response.getServiceStatus()) {
+            totalAccountBalanceByUserId.setStatus(checkValues(response.getServiceStatus().getStatus()));
+            totalAccountBalanceByUserId.setMessage(checkValues(response.getServiceStatus().getMessage()));
+        }
+
 
         return totalAccountBalanceByUserId;
 
@@ -107,14 +116,19 @@ public class IntegratorService {
         fundTransferRequest.setAmount(request.getAmount());
 
         FundTransferResponse response = (FundTransferResponse) coreBankSOAPConnector.callWebService(CORE_BANK_NAMESPACE_URI, fundTransferRequest);
-        fundTransferRestResponse.setDebitUserId(response.getFundTransferInfo().getDebitUserId());
-        fundTransferRestResponse.setDebitAccountNo(response.getFundTransferInfo().getDebitAccountNo());
-        fundTransferRestResponse.setDebitAccountBalance(response.getFundTransferInfo().getDebitAccountBalance());
-        fundTransferRestResponse.setCreditUserId(response.getFundTransferInfo().getCreditUserId());
-        fundTransferRestResponse.setCreditAccountNo(response.getFundTransferInfo().getCreditAccountNo());
-        fundTransferRestResponse.setCreditAccountBalance(response.getFundTransferInfo().getCreditAccountBalance());
-        fundTransferRestResponse.setStatus(response.getServiceStatus().getStatus());
-        fundTransferRestResponse.setMessage(response.getServiceStatus().getMessage());
+
+        if (null != response.getFundTransferInfo()) {
+            fundTransferRestResponse.setDebitUserId(response.getFundTransferInfo().getDebitUserId());
+            fundTransferRestResponse.setDebitAccountNo(response.getFundTransferInfo().getDebitAccountNo());
+            fundTransferRestResponse.setDebitAccountBalance(response.getFundTransferInfo().getDebitAccountBalance());
+            fundTransferRestResponse.setCreditUserId(response.getFundTransferInfo().getCreditUserId());
+            fundTransferRestResponse.setCreditAccountNo(response.getFundTransferInfo().getCreditAccountNo());
+            fundTransferRestResponse.setCreditAccountBalance(response.getFundTransferInfo().getCreditAccountBalance());
+        }
+        if (null != response.getServiceStatus()) {
+            fundTransferRestResponse.setStatus(response.getServiceStatus().getStatus());
+            fundTransferRestResponse.setMessage(response.getServiceStatus().getMessage());
+        }
 
         return fundTransferRestResponse;
 
