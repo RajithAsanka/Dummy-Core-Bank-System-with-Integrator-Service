@@ -5,7 +5,7 @@ Back-end developer task (dummy core banking system and rest integrator service),
 
 ### Core Bank Dummy
 
-SOAP Web Service created with Spring Boot Starter Web Services. when creating the SOAP services use a contract first approach and define the XSD for the request and response.
+SOAP Web Service created with Spring Boot Starter Web Services. when creating the SOAP services use the contract first approach and define the XSD for the request and response.</BR>
 /src/main/resources/core-bank-details.xsd
 
 
