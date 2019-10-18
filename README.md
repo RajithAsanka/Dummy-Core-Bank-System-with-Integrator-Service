@@ -79,7 +79,7 @@ server.servlet.context-path=/integrator-service </BR>
 
 ###### Get account balance of particular account - @GetMapping
 ###### URL  - http://localhost:8083/integrator-service/rest/api/v1/get/account/balance/by/accountNo
-Expected paramer name - accountNo
+###### Expected paramer name - accountNo
 return the account balance of particular account if exists in the dummy core bank database other wise return service messages with error.
 
 ###### Get total account balance - @GetMapping
